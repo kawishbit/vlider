@@ -1,2 +1,2 @@
-# vue-pretty-range-slider
+# Vlider
 Simple to use, highly customizable, and pretty vue js range slider
