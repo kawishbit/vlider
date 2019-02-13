@@ -4,7 +4,7 @@
   "description": "Simple to use, highly customizable, and pretty vue js range slider",
   "main": "dist/vlider.js",
   "scripts": {
-    "build": "rimraf ./dist && webpack --config ./build/webpack.config.js"
+    "build": "rimraf ./dist && cross-env NODE_ENV=production webpack --config build/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -20,21 +20,19 @@
   },
   "homepage": "https://github.com/kawisphoenix/vlider#readme",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "vue-loader": "^15.6.2",
-    "vue-template-compiler": "^2.6.5",
+    "vue-template-compiler": "^2.6.6",
     "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
-  },
-  "dependencies": {
+    "webpack-cli": "^3.2.3",
     "webpack-merge": "^4.2.1"
-  }
+  },
+  "dependencies": {}
 }
