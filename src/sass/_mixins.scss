@@ -1,5 +1,4 @@
-
-@mixin css3-prefix($property, $value) {
+@mixin vlider-css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
    -khtml-#{$property}: #{$value};
      -moz-#{$property}: #{$value};
@@ -7,7 +6,8 @@
        -o-#{$property}: #{$value};
           #{$property}: #{$value};
 }
-@mixin flexbox() {
+
+@mixin vlider-flexbox() {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -15,8 +15,7 @@
   display: flex;
 }
 
-@mixin flex($fg: 1, $fs: null, $fb: null) {
-
+@mixin vlider-flex($fg: 1, $fs: null, $fb: null) {
 	$fg-boxflex: $fg;
 
 	@if type-of($fg) == 'list' {
@@ -31,21 +30,21 @@
 	flex: $fg $fs $fb;
 }
 
-@mixin flex-direction($direction) {
+@mixin vlider-flex-direction($direction) {
   -webkit-flex-direction: $direction;
      -moz-flex-direction: $direction;
       -ms-flex-direction: $direction;
           flex-direction: $direction;
 }
 
-@mixin flex-wrap($wrap) {
+@mixin vlider-flex-wrap($wrap) {
   -webkit-flex-wrap: $wrap;
      -moz-flex-wrap: $wrap;
       -ms-flex-wrap: $wrap;
           flex-wrap: $wrap;
 }
 
-@mixin flex-flow($values: (row nowrap)) {
+@mixin vlider-flex-flow($values: (row nowrap)) {
 	// No Webkit Box fallback.
 	-webkit-flex-flow: $values;
 	-moz-flex-flow: $values;
@@ -53,7 +52,7 @@
 	flex-flow: $values;
 }
 
-@mixin order($val) {
+@mixin vlider-order($val) {
   -webkit-box-ordinal-group: $val;
      -moz-box-ordinal-group: $val;
   	         -ms-flex-order: $val;
@@ -61,28 +60,28 @@
   		                order: $val;
 }
 
-@mixin flex-grow($grow) {
+@mixin vlider-flex-grow($grow) {
   -webkit-flex-grow: $grow;
      -moz-flex-grow: $grow;
       -ms-flex-grow: $grow;
           flex-grow: $grow;
 }
 
-@mixin flex-shrink($shrink) {
+@mixin vlider-flex-shrink($shrink) {
   -webkit-flex-shrink: $shrink;
      -moz-flex-shrink: $shrink;
       -ms-flex-shrink: $shrink;
           flex-shrink: $shrink;
 }
 
-@mixin flex-basis($width) {
+@mixin vlider-flex-basis($width) {
   -webkit-flex-basis: $width;
      -moz-flex-basis: $width;
       -ms-flex-basis: $width;
           flex-basis: $width;
 }
 
-@mixin justify-content($value: flex-start) {
+@mixin vlider-justify-content($value: flex-start) {
 	@if $value == flex-start {
 		-webkit-box-pack: start;
 		-ms-flex-pack: start;
@@ -103,7 +102,7 @@
 	justify-content: $value;
 }
 
-@mixin align-items($value: stretch) {
+@mixin vlider-align-items($value: stretch) {
 	@if $value == flex-start {
 		-webkit-box-align: start;
 		-ms-flex-align: start;
@@ -119,7 +118,7 @@
 	align-items: $value;
 }
 
-@mixin align-self($value: auto) {
+@mixin vlider-align-self($value: auto) {
 	// No Webkit Box Fallback.
 	-webkit-align-self: $value;
 	-moz-align-self: $value;
@@ -133,7 +132,7 @@
 	align-self: $value;
 }
 
-@mixin align-content($value: stretch) {
+@mixin vlider-align-content($value: stretch) {
 	// No Webkit Box Fallback.
 	-webkit-align-content: $value;
 	-moz-align-content: $value;
@@ -147,37 +146,46 @@
 	align-content: $value;
 }
 
-@mixin track {
+@mixin vlider-track {
   cursor: pointer;
-  height: $track-height;
+  height: $vlider-track-height;
   transition: all .2s ease;
-  width: $track-width;
+  width: $vlider-track-width;
 }
 
-@mixin thumb {
-  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
-  background: $thumb-color;
-  border: $thumb-border-width solid $thumb-border-color;
-  border-radius: $thumb-radius;
+@mixin vlider-margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+@mixin vlider-padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+@mixin vlider-thumb {
+  @include vlider-range-shadow($vlider-thumb-shadow-size, $vlider-thumb-shadow-blur, $vlider-thumb-shadow-color);
+  background: $vlider-thumb-color;
+  border: $vlider-thumb-border-width solid $vlider-thumb-border-color;
+  border-radius: $vlider-thumb-radius;
   cursor: pointer;
-  height: $thumb-height;
-  width: $thumb-width;
+  height: $vlider-thumb-height;
+  width: $vlider-thumb-width;
 }
 
-@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $spread: "", $inset: "") {
-  @if ($inset != "") {
-    @include css3-prefix('box-shadow', $inset $x $y $blur $spread $color);
-  } @else {
-    @include css3-prefix('box-shadow', $x $y $blur $spread $color);
-  }
+@mixin vlider-box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $spread: "", $inset: "") {
+    @include vlider-css3-prefix('box-shadow', $inset $x $y $blur $spread $color);
 }
 
-@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+@mixin vlider-range-shadow($shadow-size, $shadow-blur, $shadow-color) {
   box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
 }
 
-
-@mixin font-styles($family: 'coco_lt', $size: false, $colour: false, $weight: false, $lh: false) {
+@mixin vlider-font-styles($family: 'Arial, sans-serif', $size: false, $colour: false, $weight: false, $lh: false) {
     @if $family != false { font-family: $family; }
     @if $size != false { font-size: $size; }
     @if $colour != false { color: $colour; }
@@ -185,13 +193,13 @@
     @if $lh != false { line-height: $lh; }
 }
 
-@mixin transition($properties...) {
+@mixin vlider-transition($properties...) {
 
   @if length($properties) >= 1 {
-    @include css3-prefix('transition', $properties);
+    @include vlider-css3-prefix('transition', $properties);
   }
 
   @else {
-    @include css3-prefix('transition',  "all 0.2s ease-in-out 0s");
+    @include vlider-css3-prefix('transition',  "all 0.2s ease-in-out 0s");
   }
 }

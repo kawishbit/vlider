@@ -1,0 +1,135 @@
+$base_spacing_unit: 1.6;
+$base_font_size: 1em;
+$base_line_height: $base_spacing_unit;
+
+$spacing_xs: $base_spacing_unit / 3;
+$spacing_sm: $base_spacing_unit / 2;
+$spacing_md: $base_spacing_unit;
+$spacing_lg: $base_spacing_unit * 1.5;
+$spacing_xl: $base_spacing_unit * 2;
+
+$font_xs: $base_font_size - 0.2;
+$font_sm: $base_font_size - 0.1;
+$font_md: $base_font_size;
+$font_lg: $base_font_size * 2;
+$font_xl: $base_font_size * 3;
+
+$font_weight_light: 300;
+$font_weight_normal: 600;
+$font_weight_bold: 800;
+$font_weight_black: 900;
+
+$h1_size: $base_font_size * 4;
+$h2_size: $base_font_size * 3;
+$h3_size: $base_font_size * 2.5;
+$h4_size: $base_font_size * 1.5;
+$h5_size: $base_font_size * 1.3;
+$h6_size: $base_font_size * 1;
+
+$color_green: #57D9C4;
+$color_yellow: #FFCE00;
+$color_blue: #0093FF;
+$color_red: #ff3f34;
+$color_orange: #FF5722;
+$color_gold: #ffa801;
+$color_brown: #795548;
+$color_purple: #9C27B0;
+$color_light_green: #66E4CF;
+$color_dark_green: #00C541;
+$color_light_blue: #2AE4DF;
+$color_dark_blue: #00296F;
+$color_indigo: #4B74FF;
+$color_magenta: #FF0087;
+$color_pink: #FB9EB6;
+$color_black: #000;
+$color_white: #fff;
+$color_light_grey: #FAFAFA;
+$color_slightlight_grey: #EEEEEE;
+$color_grey: #D8D8D8;
+$color_slightdark_grey: #ABABAB;
+$color_dark_grey: #595959;
+$color_midnight_grey: #626262;
+$color_matte_black: #464646;
+$color_facebook: #0d3c84;
+$color_messenger: #0084ff;
+$color_twitter: #50b5f4;
+$color_snapchat: #FFFC00;
+$color_pinterest: #c5232d;
+$color_tumblr: #37455c;
+$color_google_plus: #e62b33;
+$color_primary: $color_blue;
+$color_success: $color_green;
+$color_info: $color_magenta;
+$color_warning: $color_yellow;
+$color_secondary: $color_grey;
+$color_danger: $color_red;
+$color_coral: #EDAD4D;
+
+$breakpoints: (
+    "smallest-phone": 320px,
+    "phone": 400px,
+    "phone-wide": 480px,
+    "phablet": 560px,
+    "tablet-small": 640px,
+    "tablet": 768px,
+    "tablet-custom": 900px,
+    "tablet-wide": 1124px,
+    "desktop": 1248px,
+    "desktop-wide": 1430px
+);
+
+$z-indexes: (
+    "outdated-browser",
+    "modal",
+    "dashboard-sidebar",
+    "site-header",
+    "site-footer",
+    "page-wrapper",
+    "fade",
+);
+
+$track-color: #eceff1 !default;
+$thumb-color: transparent !default;
+
+$thumb-radius: 50% !default;
+$thumb-height: 30px !default;
+$thumb-width: 30px !default;
+$thumb-shadow-size: 0 !default;
+$thumb-shadow-blur: 0 !default;
+$thumb-shadow-color: rgba(0, 0, 0, .0) !default;
+$thumb-border-width: 0 !default;
+$thumb-border-color: #eceff1 !default;
+
+$track-width: 100% !default;
+$track-height: 5px !default;
+$track-shadow-size: 0 !default;
+$track-shadow-blur: 0 !default;
+$track-shadow-color: rgba(0, 0, 0, .0) !default;
+$track-border-width: 0 !default;
+$track-border-color: #cfd8dc !default;
+
+$track-radius: 0 !default;
+$contrast: 0 !default;
+
+$notie-breakpoint-mobile: 400px !default;
+$notie-breakpoint-tablet: 750px !default;
+$notie-breakpoint-desktop: 900px !default;
+$notie-breakpoint-widescreen: 1050px !default;
+$notie-font-size-mobile: 0.9rem !default;
+$notie-font-size-tablet: 1rem !default;
+$notie-font-size-desktop: 1rem !default;
+$notie-font-size-widescreen: 1rem !default;
+$notie-color-text: #FFFFFF !default;
+$notie-color-white: #FFFFFF !default;
+$notie-color-overlay: #FFFFFF !default;
+$notie-content-width: 900px !default;
+$notie-z-index: 2147483647 !default;
+
+$theme-bpzoo-colors: (
+    default : $color_white,
+    primary : $color_primary,
+    success : $color_success,
+    info    : $color_info,
+    warning : $color_warning,
+    danger  : $color_danger
+);

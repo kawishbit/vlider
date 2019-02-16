@@ -1,0 +1,188 @@
+@font-face {
+    font-family: '#{$zmdi-font-name}';
+    src: url('#{$zmdi-font-path}/Material-Design-Iconic-Font.woff2?v=#{$zmdi-version}')
+            format('woff2'),
+        url('#{$zmdi-font-path}/Material-Design-Iconic-Font.woff?v=#{$zmdi-version}')
+            format('woff'),
+        url('#{$zmdi-font-path}/Material-Design-Iconic-Font.ttf?v=#{$zmdi-version}')
+            format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.#{$zmdi-icon-prefix} {
+    display: inline-block;
+    font: normal normal normal 14px/1 '#{$zmdi-font-name}';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$zmdi-css-prefix}-lg {
+    font-size: (4em / 3);
+    line-height: (3em / 4);
+    vertical-align: -15%;
+}
+
+.#{$zmdi-css-prefix}-double {
+    font-size: 2em;
+}
+
+.#{$zmdi-css-prefix}-triple {
+    font-size: 3em;
+}
+
+.#{$zmdi-css-prefix}-quadruple {
+    font-size: 4em;
+}
+
+.#{$zmdi-css-prefix}-quintuple {
+    font-size: 5em;
+}
+
+.#{$zmdi-css-prefix}-fw {
+    width: (18em / 14);
+    text-align: center;
+}
+
+.#{$zmdi-css-prefix}-ul {
+    padding-left: 0;
+    margin-left: $zmdi-li-width;
+    list-style-type: none;
+
+    > li {
+        position: relative;
+    }
+}
+
+.#{$zmdi-css-prefix}-li {
+    position: absolute;
+    left: -$zmdi-li-width;
+    width: $zmdi-li-width;
+    top: (2em / 14);
+    text-align: center;
+
+    &.#{$zmdi-css-prefix}-lg {
+        left: (-$zmdi-li-width + (4em / 14));
+    }
+}
+
+.#{$zmdi-css-prefix}-border {
+    padding: 0.1em 0.25em;
+    border: solid 0.1em $zmdi-border-color;
+    border-radius: 2px;
+}
+
+.#{$zmdi-css-prefix}-border-circle {
+    padding: 0.1em 0.25em;
+    border: solid 0.1em $zmdi-border-color;
+    border-radius: 50%;
+}
+
+.#{$zmdi-icon-prefix} {
+    &.pull-left {
+        float: left;
+        margin-right: 0.15em;
+    }
+
+    &.pull-right {
+        float: right;
+        margin-left: 0.15em;
+    }
+}
+
+.#{$zmdi-css-prefix}-spin {
+    animation: zmdi-spin 1.5s infinite linear;
+}
+
+.#{$zmdi-css-prefix}-spin-reverse {
+    animation: zmdi-spin-reverse 1.5s infinite linear;
+}
+
+@include keyframes(zmdi-spin) {
+    0% {
+        @include transform(rotate(0deg));
+    }
+
+    100% {
+        @include transform(rotate(359deg));
+    }
+}
+
+@include keyframes(zmdi-spin-reverse) {
+    0% {
+        @include transform(rotate(0deg));
+    }
+
+    100% {
+        @include transform(rotate(-359deg));
+    }
+}
+
+.#{$zmdi-css-prefix}-rotate-90 {
+    @include transform(rotate(90deg));
+}
+
+.#{$zmdi-css-prefix}-rotate-180 {
+    @include transform(rotate(180deg));
+}
+
+.#{$zmdi-css-prefix}-rotate-270 {
+    @include transform(rotate(270deg));
+}
+
+.#{$zmdi-css-prefix}-flip-horizontal {
+    @include transform(scale(-1, 1));
+}
+
+.#{$zmdi-css-prefix}-flip-vertical {
+    @include transform(scale(1, -1));
+}
+
+.#{$zmdi-css-prefix}-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+
+.#{$zmdi-css-prefix}-stack-1x,
+.#{$zmdi-css-prefix}-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.#{$zmdi-css-prefix}-stack-1x {
+    line-height: inherit;
+}
+
+.#{$zmdi-css-prefix}-stack-2x {
+    font-size: 2em;
+}
+
+.#{$zmdi-css-prefix}-inverse {
+    color: $zmdi-inverse;
+}
+
+@each $icon in $zmdi-var {
+    .#{$zmdi-icon-prefix}-#{nth($icon,1)} {
+        &:before {
+            content: '#{nth($icon, 2)}';
+        }
+    }
+
+    @if (length(nth($icon, 3)) > 0) {
+        @each $alias in nth($icon, 3) {
+            .#{$zmdi-icon-prefix}-#{$alias} {
+                &:before {
+                    content: '#{nth($icon, 2)}';
+                }
+            }
+        }
+    }
+}

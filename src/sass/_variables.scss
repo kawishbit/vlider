@@ -1,27 +1,129 @@
-$color_1: #0093FF;
-$color_2: #FFFFFF;
-$color_3: #FFFFFF;
-$font-name: 'Arial, sans-serif';
+$color_1: #0093FF !default;
+$color_2: #FFFFFF !default;
+$color_3: #FFFFFF !default ;
+$vlider-font-name: "Trebuchet MS", Helvetica, sans-serif !default;
 
-$track-color: #eceff1 !default;
-$thumb-color: transparent !default;
+$vlider-container-minheight: 115px !default;
+$vlider-container-margin-top: 15px !default;
+$vlider-container-margin-right: 0px !default;
+$vlider-container-margin-bottom: 15px !default;
+$vlider-container-margin-left: 0px !default;
 
-$thumb-radius: 50% !default;
-$thumb-height: 30px !default;
-$thumb-width: 30px !default;
-$thumb-shadow-size: 0 !default;
-$thumb-shadow-blur: 0 !default;
-$thumb-shadow-color: rgba(0, 0, 0, .0) !default;
-$thumb-border-width: 0 !default;
-$thumb-border-color: #eceff1 !default;
+$vlider-container-padding-top: 0px !default;
+$vlider-container-padding-right: 0px !default;
+$vlider-container-padding-bottom: 0px !default;
+$vlider-container-padding-left: 0px !default;
 
-$track-width: 100% !default;
-$track-height: 8px !default;
-$track-shadow-size: 0 !default;
-$track-shadow-blur: 0 !default;
-$track-shadow-color: rgba(0, 0, 0, .0) !default;
-$track-border-width: 0 !default;
-$track-border-color: #cfd8dc !default;
+$vlider-labels-margin-top: 0px !default;
+$vlider-labels-margin-right: 0px !default;
+$vlider-labels-margin-bottom: 0px !default;
+$vlider-labels-margin-left: 0px !default;
 
-$track-radius: 0 !default;
-$contrast: 0 !default;
+$vlider-labels-padding-top: 0px !default;
+$vlider-labels-padding-right: 0px !default;
+$vlider-labels-padding-bottom: 0px !default;
+$vlider-labels-padding-left: 0px !default;
+
+$vlider-labels-top: 0 !default;
+$vlider-labels-right: 0 !default;
+$vlider-labels-left: 0 !default;
+$vlider-labels-bottom: unset !default;
+
+$vlider-labels-minheight: 115px !default;
+
+$vlider-width: 84% !default;
+$vlider-height: 4px !default;
+
+$vlider-labels-width: 100% !default;
+
+$vlider-ir-top: 50% !default;
+$vlider-ir-right: 0 !default;
+$vlider-ir-left: 0 !default;
+$vlider-ir-bottom: unset !default;
+
+$vlider-ir-margin-top: 0 !default;
+$vlider-ir-margin-right: auto !default;
+$vlider-ir-margin-bottom: 0 !default;
+$vlider-ir-margin-left: auto !default;
+
+$vlider-ir-bullet-width: 13px !default;
+$vlider-ir-bullet-height: 13px !default;
+$vlider-ir-spreadsize: 4px !default;
+$vlider-ir-active-spreadsize: 7px !default;
+
+$vlider-dark-bullet-bg: #121212 !default;
+$vlider-light-bullet-bg: #121212 !default;
+$vlider-label-fontsize: 1 !default;
+$vlider-label-fontunit: em !default;
+$vlider-label-lineheight: 1.2 !default;
+$vlider-dark-label-color: #fff !default;
+$vlider-light-label-color: #fff !default;
+$vlider-label-textalign: center !default;
+$vlider-label-maxwidth: 100% !default;
+$vlider-label-fontweight: 500 !default; 
+$vlider-label-active-fontweight: 700 !default; 
+
+$vlider-label-margin-top: 0 !default;
+$vlider-label-margin-right: 0 !default;
+$vlider-label-margin-bottom: 0 !default;
+$vlider-label-margin-left: 0 !default;
+
+$vlider-label-top: 0 !default;
+$vlider-label-right: 0 !default;
+$vlider-label-left: 0 !default;
+$vlider-label-bottom: unset !default;
+
+$vlider-icon-margin-top: 0 !default;
+$vlider-icon-margin-right: auto !default;
+$vlider-icon-margin-bottom: 0 !default;
+$vlider-icon-margin-left: auto !default;
+
+$vlider-icon-textalign: center !default;
+$vlider-icon-fontsize: 1 !default;
+$vlider-icon-fontunit: em !default;
+
+$vlider-icon-top: unset !default;
+$vlider-icon-right: 0 !default;
+$vlider-icon-left: 0 !default;
+$vlider-icon-bottom: 0 !default;
+
+$vlider-icon-active-top: unset !default;
+$vlider-icon-active-right: 0 !default;
+$vlider-icon-active-left: 0 !default;
+$vlider-icon-active-bottom: 0 !default;
+
+$vlider-extra-top: unset !default;
+$vlider-extra-right: 0 !default;
+$vlider-extra-left: 0 !default;
+$vlider-extra-bottom: -25px !default;
+
+$vlider-extra-textalign: center !default;
+$vlider-extra-fontsize: 0.75 !default;
+$vlider-extra-fontunit: em !default;
+$vlider-dark-extra-color: #51eaea !default;
+$vlider-light-extra-color: #51eaea !default;
+$vlider-extra-lineheight: 1.2 !default;
+$vlider-extra-fontweight: 500 !default; 
+
+$vlider-track-color: #eceff1 !default;
+$vlider-thumb-color: transparent !default;
+
+$vlider-thumb-radius: 50% !default;
+$vlider-thumb-height: 30px !default;
+$vlider-thumb-width: 30px !default;
+$vlider-thumb-shadow-size: 0 !default;
+$vlider-thumb-shadow-blur: 0 !default;
+$vlider-thumb-shadow-color: rgba(0, 0, 0, .0) !default;
+$vlider-thumb-border-width: 0 !default;
+$vlider-thumb-border-color: #eceff1 !default;
+
+$vlider-track-width: 100% !default;
+$vlider-track-height: 8px !default;
+$vlider-track-shadow-size: 0 !default;
+$vlider-track-shadow-blur: 0 !default;
+$vlider-track-shadow-color: rgba(0, 0, 0, .0) !default;
+$vlider-track-border-width: 0 !default;
+$vlider-track-border-color: #cfd8dc !default;
+
+$vlider-track-radius: 0 !default;
+$vlider-contrast: 0 !default;
