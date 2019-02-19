@@ -81,7 +81,7 @@
                     <ul class="demo-ul">
                         <li><b>id</b> => id of the vlider component</li>
                         <li><b>classes</b> => to add extra classes to the outer vlider container</li>
-                        <li><b>theme</b> => there are 3 default themes : ("theme-dark", "theme-light", "theme-maroon")</li>
+                        <li><b>theme</b> => there are 3 default themes : ("theme-dark", "theme-light", "theme-purple")</li>
                         <li><b>vlider-data</b> => Format : Create an array of objects, and you have to send label, color, and extras in every object, extras can be filled with anything you want and you can use the extras object using slot-scope like the above example</li>
                     </ul>
                     <h2>Events</h2>
