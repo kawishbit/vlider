@@ -44,18 +44,27 @@
                     return [
                         {
                             label: "Data 1",
-                            extras: 'unknown',
-                            color: "#ffc300"
+                            color: "#ffc300",
+                            extras: {
+                                first: 'test',
+                                second: 'test2'
+                            }
                         },
                         {
                             label: "Data 3",
-                            extras: 'unknown',
-                            color: "#ffb0fe"
+                            color: "#ffb0fe",
+                            extras: {
+                                first: 'test',
+                                second: 'test2'
+                            }
                         },
                         {
                             label: "Data 3",
-                            extras: 'unknown',
-                            color: "#ff6bd6"
+                            color: "#ff6bd6",
+                            extras: {
+                                first: 'test',
+                                second: 'test2'
+                            }
                         }
                     ]
                 }
@@ -67,6 +76,10 @@
             id: {
                 type: String,
                 default: "vlider-1"
+            },
+            classes: {
+                type: [Array, Object, String],
+                default: "extra-classes"
             }
         },
         data: function data() {
@@ -75,15 +88,21 @@
                 rangeStyle: ""
             };
         },
+        mounted: function mounted() {
+            console.log(this.classes);
+        },
         computed: {
-            rangeAmount: function rangeAmount() {
-                return this.vliderData.length;
+            rangeSteps: function rangeSteps() {
+                return this.vliderData.length
             }
         },
         watch: {
             vliderData: function vliderData() {
                 this.createCss();
                 this.inputRange = null;
+            },
+            inputRange: function inputRange() {
+                this.$emit('input', this.inputRange);
             }
         },
         mounted: function mounted() {
@@ -92,6 +111,8 @@
         methods: {
             selectThumb: function selectThumb(numbers) {
                 this.inputRange = numbers;
+                this.$emit('click', this.inputRange);
+                console.log(this.classes);
             },
             createCss: function createCss() {
                 var prevelem = document.getElementById(("rangeStyle" + (this.id)));
@@ -104,9 +125,8 @@
                 css.type = "text/css";
                 var styles = "";
                 var color_stops = this.vliderData.map(function (val) { return val.color; }).join(",");
-
-                var prefix = "#" + (this.id) + " .range input[type=range]";
-                var gradient = "\n                background: " + (this.vliderData[0].color) + ";\n                background: -moz-linear-gradient(left, " + color_stops + ");\n                background: -webkit-linear-gradient(left," + color_stops + ");\n                background: linear-gradient(to right, " + color_stops + ");\n                filter: progid:DXprogid:DXImageTransform.Microsoft.gradient(startColorstr='" + (this.vliderData[0].color) + "', endColorstr='" + (this.vliderData[this.rangeAmount - 1].color) + "',GradientType=1);\n            ";
+                var prefix = "#" + (this.id) + " .vlider-range input[type=range]";
+                var gradient = "\n                background: " + (this.vliderData[0].color) + ";\n                background: -moz-linear-gradient(left, " + color_stops + ");\n                background: -webkit-linear-gradient(left," + color_stops + ");\n                background: linear-gradient(to right, " + color_stops + ");\n                filter: progid:DXprogid:DXImageTransform.Microsoft.gradient(startColorstr='" + (this.vliderData[0].color) + "', endColorstr='" + (this.vliderData[this.rangeSteps - 1].color) + "',GradientType=1);\n            ";
                 styles += "\n                " + prefix + "::-webkit-slider-runnable-track{" + gradient + "}\n                " + prefix + ":focus::-webkit-slider-runnable-track {" + gradient + "}\n                " + prefix + "::-moz-range-track {" + gradient + "}\n                " + prefix + "::-ms-track {background: transparent;}\n                " + prefix + "::-ms-fill-lower {" + gradient + "}\n                " + prefix + ":focus::-ms-fill-lower {" + gradient + "}\n                " + prefix + "::-ms-fill-upper {" + gradient + "}\n                " + prefix + ":focus::-ms-fill-upper {" + gradient + "}\n            ";
                 css.appendChild(document.createTextNode(styles));
                 head.appendChild(css);
@@ -225,7 +245,7 @@
     var __vue_script__ = script;
 
     /* template */
-    var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vlider-container",class:[_vm.theme],attrs:{"id":_vm.id}},[_c('ul',{staticClass:"vlider-labels"},[_vm._l((_vm.vliderData),function(data,index){return [_c('li',{class:[_vm.createName(_vm.range.name), {'active' : index+1 == _vm.inputRange}],style:({color: _vm.range.color}),on:{"click":function($event){return _vm.selectThumb(index+1)}}},[_vm._t("bullet",null,{"data":data})],2)]})],2),_vm._v(" "),_c('div',{staticClass:"vlider-range"},[_c('input',{directives:[{name:"model",rawName:"v-model.number",value:(_vm.inputRange),expression:"inputRange",modifiers:{"number":true}}],attrs:{"type":"range","min":"1","max":_vm.rangeAmount,"steps":"1"},domProps:{"value":(_vm.inputRange)},on:{"__r":function($event){_vm.inputRange=_vm._n($event.target.value);},"blur":function($event){return _vm.$forceUpdate()}}})])])};
+    var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"vlider-container",class:[_vm.theme ].concat( _vm.classes),attrs:{"id":_vm.id}},[_c('ul',{staticClass:"vlider-labels"},[_vm._l((_vm.vliderData),function(data,index){return [_c('li',{class:[_vm.createName(data.label), {'active' : index+1 == _vm.inputRange}],style:({color: data.color}),on:{"click":function($event){return _vm.selectThumb(index+1)}}},[_vm._t("bullet",null,{"data":data})],2)]})],2),_vm._v(" "),_c('div',{staticClass:"vlider-range"},[_c('input',{directives:[{name:"model",rawName:"v-model.number",value:(_vm.inputRange),expression:"inputRange",modifiers:{"number":true}}],attrs:{"type":"range","min":"1","max":_vm.rangeSteps,"steps":"1"},domProps:{"value":(_vm.inputRange)},on:{"__r":function($event){_vm.inputRange=_vm._n($event.target.value);},"blur":function($event){return _vm.$forceUpdate()}}})])])};
     var __vue_staticRenderFns__ = [];
 
       /* style */

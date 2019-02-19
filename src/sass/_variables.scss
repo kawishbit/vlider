@@ -52,12 +52,14 @@ $vlider-ir-spreadsize: 4px !default;
 $vlider-ir-active-spreadsize: 7px !default;
 
 $vlider-dark-bullet-bg: #121212 !default;
-$vlider-light-bullet-bg: #121212 !default;
+$vlider-light-bullet-bg: #fff !default;
+$vlider-purple-bullet-bg: #3a0088 !default;
 $vlider-label-fontsize: 1 !default;
 $vlider-label-fontunit: em !default;
 $vlider-label-lineheight: 1.2 !default;
 $vlider-dark-label-color: #fff !default;
-$vlider-light-label-color: #fff !default;
+$vlider-light-label-color: #233142 !default;
+$vlider-purple-label-color: #51eaea  !default;
 $vlider-label-textalign: center !default;
 $vlider-label-maxwidth: 100% !default;
 $vlider-label-fontweight: 500 !default; 
@@ -101,7 +103,8 @@ $vlider-extra-textalign: center !default;
 $vlider-extra-fontsize: 0.75 !default;
 $vlider-extra-fontunit: em !default;
 $vlider-dark-extra-color: #51eaea !default;
-$vlider-light-extra-color: #51eaea !default;
+$vlider-light-extra-color: #074684 !default;
+$vlider-purple-extra-color: #ffc300 !default;
 $vlider-extra-lineheight: 1.2 !default;
 $vlider-extra-fontweight: 500 !default; 
 

@@ -1,4 +1,4 @@
-.theme-dark {
+.theme-purple {
 
 
     &.vlider-container {
@@ -166,7 +166,7 @@
                     @include vlider-transition(all 400ms);
                     @include vlider-margin($vlider-ir-margin-top,$vlider-ir-margin-right,$vlider-ir-margin-bottom,$vlider-ir-margin-left);
                     @include transform(translateY(-50%));
-                    background: $vlider-dark-bullet-bg;
+                    background: $vlider-purple-bullet-bg;
                     position: absolute;
                     right: $vlider-ir-right;
                     left: $vlider-ir-left;
@@ -205,7 +205,7 @@
                 }
                 
                 label {
-                    @include vlider-font-styles($vlider-font-name, #{$vlider-label-fontsize}#{$vlider-label-fontunit}, $vlider-dark-label-color, $vlider-label-fontweight, $vlider-label-lineheight);
+                    @include vlider-font-styles($vlider-font-name, #{$vlider-label-fontsize}#{$vlider-label-fontunit}, $vlider-purple-label-color, $vlider-label-fontweight, $vlider-label-lineheight);
                     @include vlider-margin($vlider-label-margin-top,$vlider-label-margin-right,$vlider-label-margin-bottom,$vlider-label-margin-left);
                     text-align: $vlider-label-textalign;
                     max-width: $vlider-label-maxwidth;
@@ -231,7 +231,7 @@
                 }
 
                 a {
-                    @include vlider-font-styles($vlider-font-name, #{$vlider-extra-fontsize}#{$vlider-extra-fontunit}, $vlider-dark-extra-color, $vlider-extra-fontweight, $vlider-extra-lineheight);
+                    @include vlider-font-styles($vlider-font-name, #{$vlider-extra-fontsize}#{$vlider-extra-fontunit}, $vlider-purple-extra-color, $vlider-extra-fontweight, $vlider-extra-lineheight);
                     @include vlider-transition(all 400ms);
                     text-align: $vlider-extra-textalign;
                     position: absolute;

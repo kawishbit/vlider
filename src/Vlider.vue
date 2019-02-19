@@ -1,7 +1,7 @@
 <template>
     <div
     class="vlider-container"
-    :class="[theme]"
+    :class="[theme, ...classes]"
     :id="id"
     >
         <ul class="vlider-labels">
@@ -70,6 +70,10 @@ export default {
         id: {
             type: String,
             default: "vlider-1"
+        },
+        classes: {
+            type: [Array, Object, String],
+            default: "extra-classes"
         }
     },
     data() {
@@ -77,6 +81,9 @@ export default {
             inputRange: null,
             rangeStyle: ""
         };
+    },
+    mounted() {
+        console.log(this.classes)
     },
     computed: {
         rangeSteps() {
@@ -98,7 +105,8 @@ export default {
     methods: {
         selectThumb(numbers) {
             this.inputRange = numbers
-            this.$emit('click');
+            this.$emit('click', this.inputRange)
+            console.log(this.classes)
         },
         createCss() {
             var prevelem = document.getElementById(`rangeStyle${this.id}`)

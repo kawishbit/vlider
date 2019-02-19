@@ -1,3 +1,12 @@
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+
 @mixin mq($width, $type: min) {
     @if map_has_key($breakpoints, $width) {
         $width: map_get($breakpoints, $width);
@@ -15,13 +24,6 @@
             @content;
         }
     }
-}
-
-@mixin truncate($truncation-boundary) {
-	max-width: $truncation-boundary;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 @mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
@@ -232,14 +234,6 @@
     @if $colour != false { color: $colour; }
     @if $weight != false { font-weight: $weight; }
     @if $lh != false { line-height: $lh; }
-}
-
-@mixin input-placeholder {
-  &.placeholder { @content; }
-  &:-moz-placeholder { @content; }
-  &::-moz-placeholder { @content; }
-  &:-ms-input-placeholder { @content; }
-  &::-webkit-input-placeholder { @content; }
 }
 
 @mixin css3-prefix($property, $value) {
