@@ -6,6 +6,10 @@ Input range component based on vue and custom CSS3. Highly customizable, pretty,
 
 ## Install Plugin
 
+```js
+npm install --save vlider
+```
+
 ```html
 <script>
     Import Vlider from "vlider"
