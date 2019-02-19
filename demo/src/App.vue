@@ -10,6 +10,10 @@
                     <h2>Install Plugin</h2>
                     <div class="code-snippet">
                         <div class="circles"></div>
+                        <pre v-highlightjs><code class="js">npm install --save vlider</code></pre>
+                    </div>
+                    <div class="code-snippet">
+                        <div class="circles"></div>
                         <pre v-highlightjs><code class="html" v-html="firstExample"></code></pre>
                     </div>
                     <h2>Component Usage Example</h2>
