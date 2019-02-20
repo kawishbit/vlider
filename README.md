@@ -1,6 +1,7 @@
 # Vlider
 
-Input range component based on vue and custom CSS3. Highly customizable, pretty, and easy to use. (Demo: vlider.github.io)
+Input range component based on vue and custom CSS3. Highly customizable, pretty, and easy to use. 
+(Demo: https://kawisphoenix.github.io/vlider/)
 
 ![Demo](https://github.com/kawisphoenix/vlider/blob/master/vlider.gif "Demo")
 
