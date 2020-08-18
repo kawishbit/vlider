@@ -45,7 +45,7 @@ npm install --save vlider
     v-model="inputRange"
     @click="vliderClick"
     >
-        <template> slot="bullet" slot-scope="bullet"
+        <template slot="bullet" slot-scope="bullet">
             <label>{{ bullet.data.label }}</label>
             <i
             class="em"
