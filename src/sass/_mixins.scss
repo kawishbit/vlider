@@ -1,24 +1,32 @@
+@mixin vlider-pseudo($display: block, $pos: absolute, $content: "") {
+	content: $content;
+	display: $display;
+	position: $pos;
+}
 @mixin vlider-css3-prefix($property, $value) {
-  -webkit-#{$property}: #{$value};
-   -khtml-#{$property}: #{$value};
-     -moz-#{$property}: #{$value};
-      -ms-#{$property}: #{$value};
-       -o-#{$property}: #{$value};
-          #{$property}: #{$value};
+	-webkit-#{$property}: #{$value};
+	-khtml-#{$property}: #{$value};
+	-moz-#{$property}: #{$value};
+	-ms-#{$property}: #{$value};
+	-o-#{$property}: #{$value};
+	#{$property}: #{$value};
+}
+@mixin vlider-transform($params) {
+	@include vlider-css3-prefix("transform", $params);
 }
 
 @mixin vlider-flexbox() {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
 }
 
 @mixin vlider-flex($fg: 1, $fs: null, $fb: null) {
 	$fg-boxflex: $fg;
 
-	@if type-of($fg) == 'list' {
+	@if type-of($fg) == "list" {
 		$fg-boxflex: nth($fg, 1);
 	}
 
@@ -31,20 +39,24 @@
 }
 
 @mixin vlider-flex-direction($direction) {
-  -webkit-flex-direction: $direction;
-     -moz-flex-direction: $direction;
-      -ms-flex-direction: $direction;
-          flex-direction: $direction;
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
 }
 
 @mixin vlider-flex-wrap($wrap) {
-  -webkit-flex-wrap: $wrap;
-     -moz-flex-wrap: $wrap;
-      -ms-flex-wrap: $wrap;
-          flex-wrap: $wrap;
+	-webkit-flex-wrap: $wrap;
+	-moz-flex-wrap: $wrap;
+	-ms-flex-wrap: $wrap;
+	flex-wrap: $wrap;
 }
 
-@mixin vlider-flex-flow($values: (row nowrap)) {
+@mixin vlider-flex-flow(
+	$values: (
+		row nowrap,
+	)
+) {
 	// No Webkit Box fallback.
 	-webkit-flex-flow: $values;
 	-moz-flex-flow: $values;
@@ -53,32 +65,32 @@
 }
 
 @mixin vlider-order($val) {
-  -webkit-box-ordinal-group: $val;
-     -moz-box-ordinal-group: $val;
-  	         -ms-flex-order: $val;
-  	          -webkit-order: $val;
-  		                order: $val;
+	-webkit-box-ordinal-group: $val;
+	-moz-box-ordinal-group: $val;
+	-ms-flex-order: $val;
+	-webkit-order: $val;
+	order: $val;
 }
 
 @mixin vlider-flex-grow($grow) {
-  -webkit-flex-grow: $grow;
-     -moz-flex-grow: $grow;
-      -ms-flex-grow: $grow;
-          flex-grow: $grow;
+	-webkit-flex-grow: $grow;
+	-moz-flex-grow: $grow;
+	-ms-flex-grow: $grow;
+	flex-grow: $grow;
 }
 
 @mixin vlider-flex-shrink($shrink) {
-  -webkit-flex-shrink: $shrink;
-     -moz-flex-shrink: $shrink;
-      -ms-flex-shrink: $shrink;
-          flex-shrink: $shrink;
+	-webkit-flex-shrink: $shrink;
+	-moz-flex-shrink: $shrink;
+	-ms-flex-shrink: $shrink;
+	flex-shrink: $shrink;
 }
 
 @mixin vlider-flex-basis($width) {
-  -webkit-flex-basis: $width;
-     -moz-flex-basis: $width;
-      -ms-flex-basis: $width;
-          flex-basis: $width;
+	-webkit-flex-basis: $width;
+	-moz-flex-basis: $width;
+	-ms-flex-basis: $width;
+	flex-basis: $width;
 }
 
 @mixin vlider-justify-content($value: flex-start) {
@@ -147,59 +159,66 @@
 }
 
 @mixin vlider-track {
-  cursor: pointer;
-  height: $vlider-track-height;
-  transition: all .2s ease;
-  width: $vlider-track-width;
+	cursor: pointer;
+	height: $vlider-track-height;
+	transition: all 0.2s ease;
+	width: $vlider-track-width;
 }
 
 @mixin vlider-margin($top, $right, $bottom, $left) {
-    margin-top: $top;
-    margin-right: $right;
-    margin-bottom: $bottom;
-    margin-left: $left;
+	margin-top: $top;
+	margin-right: $right;
+	margin-bottom: $bottom;
+	margin-left: $left;
 }
 
 @mixin vlider-padding($top, $right, $bottom, $left) {
-    padding-top: $top;
-    padding-right: $right;
-    padding-bottom: $bottom;
-    padding-left: $left;
+	padding-top: $top;
+	padding-right: $right;
+	padding-bottom: $bottom;
+	padding-left: $left;
 }
 
 @mixin vlider-thumb {
-  @include vlider-range-shadow($vlider-thumb-shadow-size, $vlider-thumb-shadow-blur, $vlider-thumb-shadow-color);
-  background: $vlider-thumb-color;
-  border: $vlider-thumb-border-width solid $vlider-thumb-border-color;
-  border-radius: $vlider-thumb-radius;
-  cursor: pointer;
-  height: $vlider-thumb-height;
-  width: $vlider-thumb-width;
+	@include vlider-range-shadow($vlider-thumb-shadow-size, $vlider-thumb-shadow-blur, $vlider-thumb-shadow-color);
+	background: $vlider-thumb-color;
+	border: $vlider-thumb-border-width solid $vlider-thumb-border-color;
+	border-radius: $vlider-thumb-radius;
+	cursor: pointer;
+	height: $vlider-thumb-height;
+	width: $vlider-thumb-width;
 }
 
-@mixin vlider-box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $spread: "", $inset: "") {
-    @include vlider-css3-prefix('box-shadow', $inset $x $y $blur $spread $color);
+@mixin vlider-box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4), $spread: "", $inset: "") {
+	@include vlider-css3-prefix("box-shadow", $inset $x $y $blur $spread $color);
 }
 
 @mixin vlider-range-shadow($shadow-size, $shadow-blur, $shadow-color) {
-  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+	box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
 }
 
-@mixin vlider-font-styles($family: 'Arial, sans-serif', $size: false, $colour: false, $weight: false, $lh: false) {
-    @if $family != false { font-family: $family; }
-    @if $size != false { font-size: $size; }
-    @if $colour != false { color: $colour; }
-    @if $weight != false { font-weight: $weight; }
-    @if $lh != false { line-height: $lh; }
+@mixin vlider-font-styles($family: "Arial, sans-serif", $size: false, $colour: false, $weight: false, $lh: false) {
+	@if $family != false {
+		font-family: $family;
+	}
+	@if $size != false {
+		font-size: $size;
+	}
+	@if $colour != false {
+		color: $colour;
+	}
+	@if $weight != false {
+		font-weight: $weight;
+	}
+	@if $lh != false {
+		line-height: $lh;
+	}
 }
 
 @mixin vlider-transition($properties...) {
-
-  @if length($properties) >= 1 {
-    @include vlider-css3-prefix('transition', $properties);
-  }
-
-  @else {
-    @include vlider-css3-prefix('transition',  "all 0.2s ease-in-out 0s");
-  }
+	@if length($properties) >= 1 {
+		@include vlider-css3-prefix("transition", $properties);
+	} @else {
+		@include vlider-css3-prefix("transition", "all 0.2s ease-in-out 0s");
+	}
 }

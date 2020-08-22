@@ -146,7 +146,7 @@ export default {
     v-model=&#x22;inputRange&#x22;
     @click=&#x22;vliderClick&#x22;
     &#x3E;
-        &#x3C;template&#x3E; slot=&#x22;bullet&#x22; slot-scope=&#x22;bullet&#x22;
+        &#x3C;template slot=&#x22;bullet&#x22; slot-scope=&#x22;bullet&#x22;&#x3E;
             &#x3C;label&#x3E;{{ bullet.data.label }}&#x3C;/label&#x3E;
             &#x3C;i
             class=&#x22;em&#x22;

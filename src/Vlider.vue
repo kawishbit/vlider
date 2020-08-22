@@ -7,6 +7,7 @@
         <ul class="vlider-labels">
             <template v-for="(data, index) in vliderData">
                 <li
+                :key="index"
                 @click="selectThumb(index+1)"
                 :class="[createName(data.label), {'active' : index+1 == inputRange}]"
                 :style="{color: data.color}"

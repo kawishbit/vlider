@@ -1,5 +1,8 @@
 .DS_Store
 node_modules/
+
+demo/node_modules
+
 npm-debug.log
 package-lock.json
 *.map

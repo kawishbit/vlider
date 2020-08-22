@@ -1,14 +1,22 @@
 .theme-light {
-
-
     &.vlider-container {
         @include vlider-flexbox();
         @include vlider-flex-flow(column nowrap);
         @include vlider-justify-content(center);
         @include vlider-align-items(center);
         @include vlider-transition(all 400ms);
-        @include vlider-margin($vlider-container-margin-top, $vlider-container-margin-right, $vlider-container-margin-bottom, $vlider-container-margin-left);
-        @include vlider-padding($vlider-container-padding-top, $vlider-container-padding-right, $vlider-container-padding-bottom, $vlider-container-padding-left);
+        @include vlider-margin(
+            $vlider-container-margin-top,
+            $vlider-container-margin-right,
+            $vlider-container-margin-bottom,
+            $vlider-container-margin-left
+        );
+        @include vlider-padding(
+            $vlider-container-padding-top,
+            $vlider-container-padding-right,
+            $vlider-container-padding-bottom,
+            $vlider-container-padding-left
+        );
         min-height: $vlider-container-minheight;
         position: relative;
 
@@ -42,7 +50,6 @@
                     &::-ms-fill-upper {
                         background: lighten($vlider-track-color, $vlider-contrast);
                     }
-
                 }
 
                 &::-webkit-slider-runnable-track {
@@ -62,7 +69,8 @@
                     -moz-appearance: none;
                     -webkit-appearance: none;
                     appearance: none;
-                    margin-top: ((-$vlider-track-border-width * 2 + $vlider-track-height) / 2) - ($vlider-thumb-height / 2);
+                    margin-top: ((-$vlider-track-border-width * 2 + $vlider-track-height) / 2) -
+                        ($vlider-thumb-height / 2);
                     z-index: 2;
                     opacity: 1;
                 }
@@ -120,9 +128,7 @@
                     z-index: 2;
                     opacity: 1;
                 }
-
             }
-
         }
 
         .vlider-labels {
@@ -130,8 +136,18 @@
             @include vlider-flex-flow(row nowrap);
             @include vlider-justify-content(center);
             @include vlider-align-items(stretch);
-            @include vlider-margin($vlider-labels-margin-top, $vlider-labels-margin-right, $vlider-labels-margin-bottom, $vlider-labels-margin-left);
-            @include vlider-padding($vlider-labels-padding-top, $vlider-labels-padding-right, $vlider-labels-padding-bottom, $vlider-labels-padding-left);
+            @include vlider-margin(
+                $vlider-labels-margin-top,
+                $vlider-labels-margin-right,
+                $vlider-labels-margin-bottom,
+                $vlider-labels-margin-left
+            );
+            @include vlider-padding(
+                $vlider-labels-padding-top,
+                $vlider-labels-padding-right,
+                $vlider-labels-padding-bottom,
+                $vlider-labels-padding-left
+            );
             list-style: none;
             width: $vlider-labels-width;
             position: absolute;
@@ -152,20 +168,23 @@
                 cursor: pointer;
 
                 &:hover {
-
                     a {
                         opacity: 1;
                         visibility: visible;
                     }
-                    
                 }
 
                 &::after {
-                    @include pseudo;
+                    @include vlider-pseudo;
                     @include vlider-box-shadow(0, 0, 0, currentColor, $vlider-ir-spreadsize);
                     @include vlider-transition(all 400ms);
-                    @include vlider-margin($vlider-ir-margin-top,$vlider-ir-margin-right,$vlider-ir-margin-bottom,$vlider-ir-margin-left);
-                    @include transform(translateY(-50%));
+                    @include vlider-margin(
+                        $vlider-ir-margin-top,
+                        $vlider-ir-margin-right,
+                        $vlider-ir-margin-bottom,
+                        $vlider-ir-margin-left
+                    );
+                    @include vlider-transform(translateY(-50%));
                     background: $vlider-light-bullet-bg;
                     position: absolute;
                     right: $vlider-ir-right;
@@ -180,7 +199,6 @@
                 }
 
                 &.active {
-
                     label {
                         font-weight: $vlider-label-active-fontweight;
                     }
@@ -196,17 +214,27 @@
                         bottom: $vlider-icon-active-bottom;
                         font-size: #{$vlider-icon-fontsize + 0.2}#{$vlider-icon-fontunit};
                     }
-                    
+
                     a {
                         opacity: 1;
                         visibility: visible;
                     }
-
                 }
-                
+
                 label {
-                    @include vlider-font-styles($vlider-font-name, #{$vlider-label-fontsize}#{$vlider-label-fontunit}, $vlider-light-label-color, $vlider-label-fontweight, $vlider-label-lineheight);
-                    @include vlider-margin($vlider-label-margin-top,$vlider-label-margin-right,$vlider-label-margin-bottom,$vlider-label-margin-left);
+                    @include vlider-font-styles(
+                        $vlider-font-name,
+                        #{$vlider-label-fontsize}#{$vlider-label-fontunit},
+                        $vlider-light-label-color,
+                        $vlider-label-fontweight,
+                        $vlider-label-lineheight
+                    );
+                    @include vlider-margin(
+                        $vlider-label-margin-top,
+                        $vlider-label-margin-right,
+                        $vlider-label-margin-bottom,
+                        $vlider-label-margin-left
+                    );
                     text-align: $vlider-label-textalign;
                     max-width: $vlider-label-maxwidth;
                     word-wrap: break-word;
@@ -220,7 +248,12 @@
 
                 i {
                     @include vlider-transition(all 400ms);
-                    @include vlider-margin($vlider-icon-margin-top,$vlider-icon-margin-right,$vlider-icon-margin-bottom,$vlider-icon-margin-left);
+                    @include vlider-margin(
+                        $vlider-icon-margin-top,
+                        $vlider-icon-margin-right,
+                        $vlider-icon-margin-bottom,
+                        $vlider-icon-margin-left
+                    );
                     text-align: $vlider-icon-textalign;
                     position: absolute;
                     top: $vlider-icon-top;
@@ -231,7 +264,13 @@
                 }
 
                 a {
-                    @include vlider-font-styles($vlider-font-name, #{$vlider-extra-fontsize}#{$vlider-extra-fontunit}, $vlider-light-extra-color, $vlider-extra-fontweight, $vlider-extra-lineheight);
+                    @include vlider-font-styles(
+                        $vlider-font-name,
+                        #{$vlider-extra-fontsize}#{$vlider-extra-fontunit},
+                        $vlider-light-extra-color,
+                        $vlider-extra-fontweight,
+                        $vlider-extra-lineheight
+                    );
                     @include vlider-transition(all 400ms);
                     text-align: $vlider-extra-textalign;
                     position: absolute;
@@ -244,11 +283,7 @@
                     visibility: hidden;
                     opacity: 0;
                 }
-
             }
-
         }
-
     }
-
 }

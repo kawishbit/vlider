@@ -1,2 +1,9 @@
-demo
+.DS_Store
+node_modules/
+
+demo/
+docs/
+
+npm-debug.log
+package-lock.json
 *.map
