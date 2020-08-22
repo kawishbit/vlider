@@ -14,7 +14,7 @@
 		"@vue/cli-service": "^3.4.0",
 		"node-sass": "^4.9.0",
 		"sass-loader": "^7.1.0",
-		"vlider": "^1.0.0",
+		"vlider": "^1.0.2",
 		"vue-highlightjs": "*",
 		"vue-template-compiler": "^2.5.21"
 	}
