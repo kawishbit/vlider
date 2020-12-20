@@ -4,7 +4,7 @@ Input range component based on vue and custom CSS3. Highly customizable, pretty,
 
 (Demo: https://kawisphoenix.github.io/vlider/)
 
-![Demo](https://github.com/kawisphoenix/vlider/blob/master/vlider.gif "Demo")
+![Demo](https://raw.githubusercontent.com/kawisphoenix/vlider/master/vlider.gif "Demo")
 
 ## Install Plugin
 
