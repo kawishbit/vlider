@@ -15,7 +15,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/kawisphoenix/vlider.git"
+		"url": "git+https://github.com/kawishbit/vlider.git"
 	},
 	"keywords": [
 		"vlider",
@@ -23,12 +23,12 @@
 		"input range",
 		"vue input range"
 	],
-	"author": "Kawish Behzad (http://kawisphoenix.me)",
+	"author": "Kawish Behzad",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/kawisphoenix/vlider/issues"
+		"url": "https://github.com/kawishbit/vlider/issues"
 	},
-	"homepage": "https://kawisphoenix.github.io/vlider",
+	"homepage": "https://kawishbit.github.io/vlider",
 	"devDependencies": {
 		"autoprefixer": "^9.4.7",
 		"cross-env": "^5.2.0",
