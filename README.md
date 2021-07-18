@@ -2,7 +2,7 @@
 
 Input range component based on vue and custom CSS3. Highly customizable, pretty, and easy to use.
 
-(Demo: https://kawisphoenix.github.io/vlider/)
+(Demo: https://kawishbit.github.io/vlider/)
 
 ![Demo](https://raw.githubusercontent.com/kawisphoenix/vlider/master/vlider.gif "Demo")
 
